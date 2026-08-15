@@ -1,0 +1,4 @@
+interface:
+  display_name: "Last Dance"
+  short_description: "交付前的最后一遍正文清洗，去掉 AI 腔和无效废话"
+  default_prompt: "Use $last-dance 清洗这段正文，保留原有事实、术语和结构。"
