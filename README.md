@@ -18,24 +18,19 @@ Last Dance 用在内容快要交付的时候。方案、PPT、周报、邮件、
 
 它更像交付前的编辑，不像“把一段话改得更像人”的生成器。话可以变，事情不能变。
 
-## v1.1.0：团队怎么共用
+## v1.1.0 新增
 
-平时直接贴正文就行。没有设置文件时，Last Dance 按“正常”清洗，不会先让同事选一堆选项。
+- **支持自定义改动幅度**：可以说“轻一点”“正常”或“可以重写”。
+  **Adjustable edit level**: Say “light”, “standard”, or “rewrite”.
+- **支持自定义特殊词表**：可以告诉它哪些词必须保留，哪些词统一换成什么说法。
+  **Custom lexicon**: Mark terms to preserve or replace consistently.
+- **支持用户记忆**：说“记住”后，它会把这些约定记在当前项目，不带到别的项目。
+  **Project memory**: Say “remember” to save rules for this project only.
+- **支持直接反馈**：可以直接说“太重了”“别像广告”“第二段别动”。它会按这次反馈重做；只有你说“记住”，才会变成长期规则。
+  **Direct feedback**: Say “too heavy”, “less promotional”, or “keep paragraph two”. It only becomes a lasting rule when you say “remember”.
 
-需要控制改动时，可以直接说：
-
-- `轻一点，别删句子。`
-- `这次可以重写，结构也能动。`
-- `“X-Flow”是固定说法，不要改。`
-
-只有说了“以后都这样”“记住”或“记进词表”，它才会在当前项目创建 `.lastdance/`：
-
-- `preferences.md`：默认改动幅度和带适用范围的长期规则。
-- `lexicon.md`：团队确认过的保留词和替换词。
-
-这些文件只在项目内生效，不会把一份项目的口径带到另一份。路径不明确或目录不可写时，它仍会完成本次清洗，但不会假装已经记住。
-
-清洗结果不对时，直接说人话就够：`太重了`、`别像广告`、`第二段语气别动`、`把 X 改成 Y`。临时反馈只重做这次；你明确说“记住”才会成为项目规则。
+平时贴正文就行。没有设置文件时，Last Dance 会直接清洗，不会先让你设置。
+Just paste the text. Without saved settings, Last Dance cleans it directly instead of asking you to configure it first.
 
 ## 安装
 
