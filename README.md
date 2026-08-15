@@ -1,4 +1,6 @@
-# lastdance
+# Last Dance
+
+> v1.1.0 · 交付前的最后一遍
 
 Last Dance 用在内容快要交付的时候。方案、PPT、周报、邮件、对外介绍都已经写完了，但还嫌绕、嫌虚、嫌像 AI，就跑一遍。
 
@@ -15,6 +17,25 @@ Last Dance 用在内容快要交付的时候。方案、PPT、周报、邮件、
 | 给一份“修改说明”或前后对照。 | 默认只给干净正文。只有你明确要审稿，才把需要你拍板的地方单列出来。 |
 
 它更像交付前的编辑，不像“把一段话改得更像人”的生成器。话可以变，事情不能变。
+
+## v1.1.0：团队怎么共用
+
+平时直接贴正文就行。没有设置文件时，Last Dance 按“正常”清洗，不会先让同事选一堆选项。
+
+需要控制改动时，可以直接说：
+
+- `轻一点，别删句子。`
+- `这次可以重写，结构也能动。`
+- `“X-Flow”是固定说法，不要改。`
+
+只有说了“以后都这样”“记住”或“记进词表”，它才会在当前项目创建 `.lastdance/`：
+
+- `preferences.md`：默认改动幅度和带适用范围的长期规则。
+- `lexicon.md`：团队确认过的保留词和替换词。
+
+这些文件只在项目内生效，不会把一份项目的口径带到另一份。路径不明确或目录不可写时，它仍会完成本次清洗，但不会假装已经记住。
+
+清洗结果不对时，直接说人话就够：`太重了`、`别像广告`、`第二段语气别动`、`把 X 改成 Y`。临时反馈只重做这次；你明确说“记住”才会成为项目规则。
 
 ## 安装
 
@@ -73,6 +94,11 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 ```text
 lastdance/
 ├── lastdance/
+│   ├── agents/openai.yaml
+│   ├── references/
+│   │   ├── interaction-cases.md
+│   │   ├── lexicon-template.md
+│   │   └── preferences-template.md
 │   └── SKILL.md
 └── README.md
 ```
